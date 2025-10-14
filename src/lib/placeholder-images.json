@@ -1,3 +1,70 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract technology background with network lines",
+      "imageUrl": "https://picsum.photos/seed/techconf1/1920/1080",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "speaker-1",
+      "description": "Headshot of Dr. Anya Sharma",
+      "imageUrl": "https://picsum.photos/seed/speaker1/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "speaker-2",
+      "description": "Headshot of Ben Carter",
+      "imageUrl": "https://picsum.photos/seed/speaker2/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "speaker-3",
+      "description": "Headshot of Chloe Garcia",
+      "imageUrl": "https://picsum.photos/seed/speaker3/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "speaker-4",
+      "description": "Headshot of David Lee",
+      "imageUrl": "https://picsum.photos/seed/speaker4/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "speaker-5",
+      "description": "Headshot of Emily White",
+      "imageUrl": "https://picsum.photos/seed/speaker5/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "speaker-6",
+      "description": "Headshot of Frank Miller",
+      "imageUrl": "https://picsum.photos/seed/speaker6/400/400",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "sponsor-1",
+      "description": "Logo of sponsor company QuantumLeap",
+      "imageUrl": "https://picsum.photos/seed/sponsor1/200/100",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-2",
+      "description": "Logo of sponsor company Nova Systems",
+      "imageUrl": "https://picsum.photos/seed/sponsor2/200/100",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-3",
+      "description": "Logo of sponsor company Apex Innovations",
+      "imageUrl": "https://picsum.photos/seed/sponsor3/200/100",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-4",
+      "description": "Logo of sponsor company Fusion Dynamics",
+      "imageUrl": "https://picsum.photos/seed/sponsor4/200/100",
+      "imageHint": "company logo"
+    }
+  ]
 }
