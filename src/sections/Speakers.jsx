@@ -16,8 +16,7 @@ const speakers = [
   {
     name: "Elon Musk",
     title: "Founder, Tesla Inc",
-    imageUrl:
-      "/speakers/Elon Musk.jpg",
+    imageUrl: "/speakers/Elon Musk.jpg",
   },
   
 ];
