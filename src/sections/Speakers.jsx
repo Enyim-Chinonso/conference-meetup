@@ -14,29 +14,12 @@ const speakers = [
     imageUrl: "/speakers/panelist snip.png",
   },
   {
-    name: "Chloe Garcia",
-    title: "Blockchain Architect, Apex Innovations",
+    name: "Elon Musk",
+    title: "Founder, Tesla Inc",
     imageUrl:
-      "https://images.unsplash.com/photo-1614289371568-8b21c1c4e99a?auto=format&fit=crop&w=800&q=80",
+      "/speakers/Elon Musk.jpg",
   },
-  // {
-  //   name: "David Lee",
-  //   title: "Head of Cloud, Fusion Dynamics",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1600181951225-8f1b1bfb33f7?auto=format&fit=crop&w=800&q=80",
-  // },
-  // {
-  //   name: "Emily White",
-  //   title: "Lead UX Researcher, Starlight UI",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1614287066380-7d07c0c3a1de?auto=format&fit=crop&w=800&q=80",
-  // },
-  // {
-  //   name: "Frank Miller",
-  //   title: "DevOps Guru, CyberSecure",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1603415527085-c9c80d3d63e7?auto=format&fit=crop&w=800&q=80",
-  // },
+  
 ];
 
 export default function Speakers() {
