@@ -4,19 +4,19 @@ import React from "react";
 
 const speakers = [
   {
+    name: "Prof. Eseni Azu Udu ",
+    title: "Dean Faculty of Law, Alex Ekwueme Federal university",
+    imageUrl: "/speakers/Prof Udu spella.jpg",
+  },
+  {
+    name: "Pascal Reigns (Gbreigns)",
+    title: "Web3 founder/State Mod STNG",
+    imageUrl: "/speakers/web3 founder spella.jpg",
+  },
+  {
     name: "Dr. Moses Erim",
     title: "Founder Moses Erim foundation",
-    imageUrl: "/speakers/Moses Erim snip.png",
-  },
-  {
-    name: "Pascal Reigns (GBreigns)",
-    title: "Web3 founder/State Mod STNG",
-    imageUrl: "/speakers/panelist snip.png",
-  },
-  {
-    name: "Elon Musk",
-    title: "Founder, Tesla Inc",
-    imageUrl: "/speakers/Elon Musk.jpg",
+    imageUrl: "/speakers/Erim spella.jpg",
   },
   
 ];
