@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const speakers = [
   {
@@ -24,130 +22,57 @@ const speakers = [
     imageUrl: "/speakers/Erim spella.jpg",
   },
   {
-    name: "",
-    title: "",
     imageUrl: "/speakers/Spella colored flier.jpg",
   },
   {
-    name: "",
-    title: "",
     imageUrl: "/speakers/road map fliers.jpg",
   },
   {
-    name: "",
-    title: "",
     imageUrl: "/speakers/Spella flier.jpg",
   },
 ];
 
 export default function Speakers() {
-  const sectionRef = useRef(null);
-
   useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const cards = Array.from(sectionRef.current.querySelectorAll(".speaker-card"));
-
-    // Per-card entrance animation
-    cards.forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.75,
-          ease: "power2.out",
-          delay: i * 0.06,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 92%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    // cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-      gsap.killTweensOf(cards);
-    };
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
   }, []);
 
   return (
-    <section
-      id="speakers"
-      ref={sectionRef}
-      className="py-5"
-      style={{ background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)" }} // subtle off-white bg
-    >
+    <section id="speakers" className="py-5 bg-light">
       <div className="container">
-        {/* Header */}
         <div className="text-center mb-5">
           <h2 className="fw-bold display-5 text-primary">Meet Our Speakers</h2>
-          <p className="lead text-muted mx-auto" style={{ maxWidth: "780px" }}>
+          <p className="lead text-muted mx-auto" style={{ maxWidth: "700px" }}>
             Industry leaders and visionaries who are shaping the future of technology.
           </p>
         </div>
 
-        {/* Grid */}
         <div className="row g-4 justify-content-center">
-          {speakers.map((speaker, idx) => (
+          {speakers.map((speaker, index) => (
             <div
-              key={idx}
-              className="col-12 col-sm-6 col-lg-4 d-flex justify-content-center"
+              className="col-12 col-sm-6 col-md-4"
+              key={index}
+              data-aos="fade-up"
             >
-              <article
-                className="speaker-card card border-0 shadow-sm h-100 overflow-hidden"
-                style={{
-                  width: "100%",
-                  maxWidth: "360px",
-                  borderRadius: "14px",
-                  background: "#ffffff", // solid card background for contrast
-                }}
-                aria-label={
-                  speaker.name ? `${speaker.name} - ${speaker.title}` : "Conference visual"
-                }
-              >
-                {/* Image wrapper - flush with card body (no gap) */}
-                <div
-                  className="img-wrap position-relative"
-                  style={{
-                    height: "320px",
-                    overflow: "hidden",
-                    borderTopLeftRadius: "14px",
-                    borderTopRightRadius: "14px",
-                    background: "#e9eef6", // fallback color while image loads
-                  }}
-                >
+              <div className="card border-0 shadow-sm overflow-hidden zoom-card h-100">
+                <div className="zoom-wrap position-relative" style={{ height: "330px" }}>
                   <Image
                     src={speaker.imageUrl}
-                    alt={speaker.name || "Conference visual"}
+                    alt={speaker.name || "Conference Speaker"}
                     fill
-                    priority={idx < 3}
+                    className="img-fluid rounded-top"
+                    style={{ objectFit: "cover" }}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    style={{
-                      objectFit: "cover",
-                      transition: "transform 0.6s ease, filter 0.4s ease",
-                      // slightly brighten images
-                      filter: "brightness(1.03) contrast(1.02)",
-                    }}
-                    className="d-block"
                   />
                 </div>
 
-                {/* Card body sits flush to image (no gap) */}
                 {(speaker.name || speaker.title) && (
-                  <div
-                    className="card-body text-center py-3"
-                    style={{ paddingTop: "12px", paddingBottom: "14px" }}
-                  >
-                    <h3 className="h6 fw-semibold mb-1 text-dark">{speaker.name}</h3>
+                  <div className="card-body text-center">
+                    <h5 className="fw-semibold text-dark mb-1">{speaker.name}</h5>
                     <p className="text-primary small mb-0">{speaker.title}</p>
                   </div>
                 )}
-              </article>
+              </div>
             </div>
           ))}
         </div>
@@ -155,41 +80,28 @@ export default function Speakers() {
 
       <style jsx>{`
         #speakers {
-          scroll-margin-top: 90px;
+          scroll-margin-top: 100px;
         }
 
-        .speaker-card {
-          transition: transform 0.28s ease, box-shadow 0.28s ease;
+        /* card styling */
+        .zoom-card {
           border-radius: 14px;
-        }
-        .speaker-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 18px 40px rgba(7, 22, 77, 0.12);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Target the actual <img> inside next/image wrapper */
-        .img-wrap img {
-          width: 100%;
-          height: 100%;
-          display: block;
-          transform-origin: center center;
-          transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
-            filter 0.4s ease;
-        }
-        .speaker-card:hover .img-wrap img {
-          transform: scale(1.06);
-          filter: brightness(1.06) contrast(1.04);
+        .zoom-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
         }
 
-        /* Ensure card-body touches the image with minimal perceived gap */
-        .card-body {
-          margin: 0;
+        /* fix for next/image wrapper */
+        .zoom-wrap :global(img) {
+          transition: transform 0.6s ease, filter 0.4s ease;
         }
 
-        @media (max-width: 576px) {
-          .img-wrap {
-            height: 260px !important;
-          }
+        .zoom-card:hover .zoom-wrap :global(img) {
+          transform: scale(1.08);
+          filter: brightness(1.08) contrast(1.05);
         }
       `}</style>
     </section>
