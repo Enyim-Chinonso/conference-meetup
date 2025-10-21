@@ -13,14 +13,14 @@ export default function Header() {
     { href: "#speakers", label: "Speakers" },
   ];
 
-  // ✅ Add scroll shadow and background effect
+  // Add scroll shadow and background effect
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Smooth scrolling
+  // Smooth scrolling
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     const section = document.querySelector(href);
@@ -42,7 +42,7 @@ export default function Header() {
       }}
     >
       <div className="container d-flex justify-content-between align-items-center py-3">
-        {/* ✅ Brand Name (Replaced Logo with DRC2025) */}
+        {/* Brand Name (Replaced Logo with DRC2025) */}
         <Link
           href="/"
           className="text-decoration-none"
@@ -61,7 +61,7 @@ export default function Header() {
           </h3>
         </Link>
 
-        {/* ✅ Desktop Nav Links */}
+        {/* Desktop Nav Links */}
         <nav className="d-none d-md-flex align-items-center gap-4">
           {navLinks.map((link) => (
             <Link
@@ -74,7 +74,7 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* ✅ Register Button */}
+          {/* Register Button */}
           <a
             href="#register"
             onClick={(e) => handleLinkClick(e, "#register")}
@@ -84,7 +84,7 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* ✅ Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle */}
         <button
           className="btn btn-link text-white d-md-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -94,7 +94,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* ✅ Mobile Menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div
           className="d-md-none py-3"
@@ -125,7 +125,7 @@ export default function Header() {
         </div>
       )}
 
-      {/* ✅ Custom hover + animation styles */}
+      {/* Custom hover + animation styles */}
       <style jsx>{`
         header {
           position: fixed !important;

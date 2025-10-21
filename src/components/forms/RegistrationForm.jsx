@@ -188,7 +188,7 @@ export default function RegistrationForm() {
         </div>
       </div>
 
-      {/* ✅ Success Modal */}
+      {/* Success Modal */}
       {showModal && (
         <div
           className="modal fade show"

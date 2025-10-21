@@ -53,10 +53,10 @@ export default function About() {
         height: 'auto',
         minHeight: '600px',
         padding: "100px 0",
-        backgroundColor: 'rgb(1, 1, 75)', // ✅ Company navy tone
+        backgroundColor: 'rgb(1, 1, 75)',
       }}
     >
-      {/* ✅ Brighter Background Image */}
+      {/* Brighter Background Image */}
       <Image
         src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51"
         alt="Tech conference background"
@@ -65,7 +65,7 @@ export default function About() {
         priority
       />
 
-      {/* ✅ Soft Navy Overlay to balance colors */}
+      {/* Soft Navy Overlay to balance colors */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
@@ -74,7 +74,7 @@ export default function About() {
         }}
       ></div>
 
-      {/* ✅ Main Content */}
+      {/* Main Content */}
       <div className="position-relative z-1 container px-4 py-5">
         <h1 className="hero-title display-4 fw-bold mb-3">
           Digital Roadmap <span className="text-info">Conference 2025</span>
@@ -88,7 +88,7 @@ export default function About() {
           the future of technology, business, and digital transformation — together.
         </p>
 
-        {/* ✅ Event Info Cards */}
+        {/* Event Info Cards */}
         <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 mb-4">
           {/* Date */}
           <div
@@ -131,7 +131,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* ✅ CTA Button */}
+        {/* CTA Button */}
         <div className="hero-cta mt-2 mb-1">
           <Link
             href="#register"

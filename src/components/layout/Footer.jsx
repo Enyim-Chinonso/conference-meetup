@@ -14,7 +14,7 @@ export default function Footer() {
     >
       <div className="container text-center text-md-start">
         <div className="row align-items-center gy-4">
-          {/* ✅ DRC2025 Brand Text */}
+          {/* DRC2025 Brand Text */}
           <div className="col-md-4 text-center text-md-start">
             <Link href="/" className="text-decoration-none">
               <h4
@@ -31,7 +31,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* ✅ Social Links */}
+          {/* Social Links */}
           <div className="col-md-4 text-center">
             <div className="d-flex justify-content-center gap-4">
               <Link
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ✅ Copyright */}
+          {/* Copyright */}
           <div className="col-md-4 text-center text-md-end">
             <p className="text-light small mb-0">
               &copy; {new Date().getFullYear()}{" "}
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ✅ Hover animations */}
+      {/* Hover animations */}
       <style jsx>{`
         .hover-scale {
           transition: transform 0.3s ease, color 0.3s ease;

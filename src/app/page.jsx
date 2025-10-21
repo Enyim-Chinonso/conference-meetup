@@ -5,8 +5,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Speakers from "@/sections/Speakers";
-// import Schedule from "@/sections/Schedule";
-// import Sponsors from "@/sections/Sponsors";
 import Registration from "@/sections/Registration";
 
 
